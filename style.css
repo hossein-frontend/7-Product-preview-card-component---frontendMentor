@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+:root {
+  --clr-cyan-dark: hsl(158, 36%, 37%);
+  --clr-cream: hsl(30, 38%, 92%);
+  --clr-blue-shade: hsl(212, 21%, 14%);
+  --clr-blue-tint: hsl(228, 12%, 48%);
+  --clr-white: hsl(0, 0%, 100%);
+  --font-serif: Fraunces, serif;
+  --font-sans: Montserrat, sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+:is(img, picture) {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+
+:is(h1, h2) {
+  font-family: var(--font-serif);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  line-height: 1.6;
+  min-height: 100vh;
+  background-color: var(--clr-cream);
+  font-size: 1.4rem;
+  font-family: var(--font-sans);
+}
+.product-card {
+  width: min(90%, 600px);
+  border-radius: 1rem;
+  display: grid;
+  background-color: var(--clr-white);
+}
+.product-card__price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.product-card__price h1 {
+  color: var(--clr-cyan-dark);
+}
+.product-card__price span {
+  text-decoration: line-through;
+}
+.product-card__textbox {
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+h1 {
+  line-height: 1.1;
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+.subheading {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+:is(.subheading, p, h1 + span) {
+  color: var(--clr-blue-tint);
+}
+.btn {
+  background-color: var(--clr-cyan-dark);
+
+  border-radius: 9px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--clr-white);
+  font-weight: 500;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3rem;
+  gap: 1rem;
+}
+svg {
+  width: 10px;
+}
+.product-card__icon {
+  display: grid;
+  width: 20px;
+  object-fit: contain;
+  place-items: center;
+}
+@media (min-width: 500px) {
+  .product-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
