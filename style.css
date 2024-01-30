@@ -27,6 +27,7 @@ html {
   display: block;
   object-fit: cover;
   height: 100%;
+  border-radius: 1rem 0 0 1rem;
 }
 
 :is(h1, h2) {
@@ -107,5 +108,12 @@ svg {
 @media (min-width: 500px) {
   .product-card {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  img,
+  picture {
+    border-radius: 1rem 1rem 0 0;
   }
 }
